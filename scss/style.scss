@@ -5,6 +5,11 @@
 nav{
   background-color: $nav-color;
   position: fixed !important;
+  -webkit-box-shadow: 14px 1px 36px -8px rgba(0,0,0,0.75);
+  -moz-box-shadow: 14px 1px 36px -8px rgba(0,0,0,0.75);
+  box-shadow: 14px 1px 36px -8px rgba(0,0,0,0.75);
+  z-index: 999;
+  height: 100%;
   .nav{
     padding: 0;
     .brand{
@@ -31,7 +36,7 @@ nav{
     text-align: right;
     float: right;
     padding-right: 10px;
-    padding-bottom: 300px;
+    padding-bottom: 20px;
   }
 }
 
@@ -53,6 +58,10 @@ nav{
 }
 
 .nav-pills > li.active > a, .nav-pills > li.active > a:hover{
+  background-color: $nav-active;
+}
+
+.nav>li>a:hover{
   background-color: $nav-active;
 }
 
@@ -89,31 +98,403 @@ nav{
   .photo{
     margin: 0 auto;
     img{
-
+    }
+    .photo-hover{
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      transition: all ease 0.5s;
+      -webkit-transition: all ease 0.5s;
+      -moz-transition: all ease 0.5s;
+      background: rgb(45, 184, 183);
+      font-weight: lighter;
+      text-align: center;
+      &:hover{
+        opacity: .9;
+      }
+      p{
+        //font-size: 24px;
+        font-size: 1.5em;
+        color: white;
+        position: relative;
+        top: 20%;
+        left: 50%;
+        text-align: center;
+        transform: translateX(-50%) translateY(-50%);
+        margin: 0;
+      }
+      p+p{
+        font-size: 12px;
+      }
+      .divider{
+        height: 1px;
+        width: 35%;
+        background-color: white;
+        margin: 0 auto;
+        position: relative;
+        top: 60px;
+      }
+      .fa{
+        font-size: 4vw;
+        color: white;
+        position: relative;
+      }
+      a{
+        position: relative;
+        top: 70px;
+        text-decoration: none;
+      }
     }
   }
 }
+.button{
+  display: none;
+}
+.mobile-nav-bar{
+  display: none;
+}
+
 
 @media only screen and (max-width: 768px){
   nav{
     display: none;
     z-index: 999;
+    bottom: 0;
+    overflow-y: scroll;
+    .nav{
+      .brand{
+        margin-top: 50px;
+      }
+    }
   }
   .gallery{
     left: 0;
+    margin-top: 60px;
+    width: 100%;
+  }
+  .mobile-nav-bar{
+    display: block;
+    background-color: $nav-color;
+    position: fixed;
+    z-index: 999;
+    width: 100%;
     .button{
       display: block;
-      position: fixed;
-      z-index: 999;
-      top: 30px;
-      left: 20px;
-      background-color: white;
-      width: 60px;
-      height: 55px;
+      margin: 10px 0 10px 15px;
+      //z-index: 999;
+
+      background-color: $nav-active;
+      width: 45px;
+      height: 40px;
       text-align: center;
       vertical-align: middle;
       border-radius: 10px;
-      font-size: 40px;
+      font-size: 30px;
+    }
+  }
+}
+
+@media only screen and (max-width: 1330px){
+  .gallery{
+    .photo{
+      .photo-hover{
+        .divider{
+          top: 45px;
+        }
+        a{
+          top: 50px;
+        }
+        p{
+          top: 45px;
+        }
+      }
+    }
+  }
+}
+
+//work
+.background{
+  background-color: #b4b7b8;
+  width: 83.5%;
+  height: 100%;
+  float: right;
+  padding: 20px;
+  .wrapper{
+    background-color: white;
+    width: 100%;
+    .project{
+      padding: 20px;
+      overflow: hidden;
+      h4{
+        padding: 10px 0;
+
+      }
+      .project-desc{
+        padding-right: 20px !important;
+        border-right: 1px solid $text-color;
+        p{
+          color: $text-color;
+          border-bottom: 1px solid $text-color;
+          padding-bottom: 20px;
+          font-size: 15px;
+        }
+      }
+      .project-info{
+        padding-left: 20px !important;
+        ul{
+          padding-left: 0;
+          li{
+            list-style: none;
+            padding-bottom: 8px;
+            padding-top: 8px;
+            border-bottom: 1px solid $text-color;
+            a{
+              text-decoration: none;
+              color: $text-color;
+              font-size: 12px;
+            }
+            i{
+              padding-right: 8px;
+              color: $nav-active;
+              font-size: 20px;
+            }
+          }
+        }
+        .tag{
+          display: inline-block;
+          padding: 8px 15px;
+          border: 1px solid $text-color;
+          border-radius: 8px;
+          color: $text-color;
+          margin: 10px 7px 0 0;
+        }
+        .project-gallery{
+          overflow: hidden;
+          .col-md-2{
+            padding: 5px;
+          }
+        }
+        .col-md-12{
+          padding: 0;
+        }
+        #fix{
+          display: inline-table;
+          padding-bottom: 0;
+          margin-bottom: 0;
+        }
+        .project-features{
+          li{
+            border: 0;
+            font-size: 14px;
+          }
+          .fa{
+            color: $text-color;
+          }
+        }
+      }
+    }
+    //ABOUT PAGE
+    .about{
+      padding: 20px;
+      overflow: hidden;
+      .about-desc{
+        padding-right: 20px !important;
+        border-right: 1px solid $text-color;
+        .staff{
+          overflow: hidden;
+          .person{
+            margin-right: 15px;
+            margin-bottom: 15px;
+            .hover-over{
+              position: absolute;
+              width: 100%;
+              height: 100%;
+              opacity: 0;
+              transition: all ease 0.5s;
+              -webkit-transition: all ease 0.5s;
+              -moz-transition: all ease 0.5s;
+              background: rgb(45, 184, 183);
+              color: white;
+              text-align: center;
+              p{
+                margin: 0;
+                padding: 0;
+
+              }
+              p:first-child{
+                margin-top: 30px;
+              }
+              &:hover{
+                opacity: 1;
+              }
+            }
+          }
+        }
+      }
+      .about-skills{
+        padding-left: 20px !important;
+        .skills{
+          font-weight: lighter;
+          .bar-wrapper{
+            p{
+              padding: 0;
+              margin-bottom: 5px;
+              color: #727272;
+            }
+            span{
+              float: right;
+            }
+            .progress{
+              border-radius: 0;
+              background-color: white;
+              box-shadow: none;
+              border: 1px solid #e2e2e2;
+              height: 34px;
+              .progress-bar{
+                background-color: #e2e2e2;
+                box-shadow: none;
+              }
+            }
+          }
+        }
+        .testimonials{
+          .testimonial{
+              border: 1px solid #e2e2e2;
+            .photo{
+              background-color: #1ab5b3;
+            }
+            .img-responsive{
+              margin: 0;
+            }
+            .name{
+              background-color: #1ab5b3;
+              p{
+                padding: 30px 0;
+                margin: 0;
+                font-style: italic;
+              }
+            }
+            .description{
+              p{
+                display: inline-block;
+                padding: 30px;
+                margin: 0;
+                color: $text-color;
+              }
+            }
+          }
+          .services{
+            ul{
+              color: $text-color;
+              padding-left: 15px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media only screen and (max-width: 768px){
+  .background{
+    width: 100%;
+    float: none;
+    margin-top: 60px;
+    .wrapper{
+      .project{
+        .project-desc{
+          border-right: 0;
+        }
+        .project-info{
+          padding-left: 0 !important;
+          .project-features{
+            float: left;
+          }
+        }
+      }
+      .about .about-desc{
+        border-right: none;
+      }
+      .about .about-skills{
+        padding-left: 0 !important;
+      }
+    }
+  }
+}
+
+//Contact
+.contact{
+  background-image: url("../imgs/map.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  width: 83.4%;
+  float: right;
+  .contact-form{
+    overflow: hidden;
+    background-color: white;
+    max-width: 780px;
+    margin: 20px;
+    padding-top: 0;
+    .contact-wrapper{
+      padding: 20px;
+      p{
+        color: $text-color;
+        border-bottom: 1px solid $text-color;
+        padding-bottom: 20px;
+      }
+      form{
+        .form-group{
+          .input-group{
+            margin-bottom: 8px;
+            input{
+              padding: 25px;
+              border-radius: 0;
+            }
+            .input-group-addon{
+              background-color: white;
+              border-radius: 0;
+              padding: 5px 18px;
+              .fa{
+                color: $nav-active;
+                font-size: 20px;
+              }
+            }
+            textarea{
+              height: 111px;
+              resize: none;
+            }
+          }
+          button{
+            background-color: $nav-active;
+            border: 0;
+            outline: none;
+            width: 100%;
+            height: 53px;
+            color: white;
+            &:hover{
+              opacity: 0.9;
+            }
+          }
+        }
+        .col-md-6{
+          padding: 0 10px 0 0;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 768px){
+  .contact{
+    float: none;
+    margin-top: 60px;
+    width: 100%;
+    padding-top: 20px;
+    .contact-form{
+      .contact-wrapper{
+      }
     }
   }
 }

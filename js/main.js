@@ -2,10 +2,13 @@
 
 function toggleMenu(){
   var menu = document.getElementById('menu');
-  if(menu.style.display != "none"){
-    menu.style.display = "none";
-  }else{
+  if(menu.style.display != "block"){
     menu.style.display = "block";
+    $('#icon').removeClass('fa-bars');
+    $('#icon').addClass('fa-times');
+  }else{
+    menu.style.display = "none";
+    $('#icon').addClass('fa-bars');
   }
 };
 
