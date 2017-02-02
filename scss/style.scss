@@ -15,7 +15,6 @@ nav{
     .brand{
       background-color: $nav-color;
       img{
-      //  margin: 30px 90px;
       padding: 30px 50px;
       }
       .img-responsive{
@@ -37,6 +36,18 @@ nav{
     float: right;
     padding-right: 10px;
     padding-bottom: 20px;
+    color: $text-color;
+  }
+}
+@media only screen and (max-width: 1300px){
+  nav{
+    .nav{
+      .brand{
+        .img-responsive{
+          padding: 20px;
+        }
+      }
+    }
   }
 }
 
@@ -155,7 +166,6 @@ nav{
   display: none;
 }
 
-
 @media only screen and (max-width: 768px){
   nav{
     display: none;
@@ -207,6 +217,91 @@ nav{
         }
         p{
           top: 45px;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 991px){
+  .gallery{
+    .photo{
+      .photo-hover{
+        .divider{
+          top: 100px;
+        }
+        a{
+          top: 110px;
+        }
+        .fa{
+          font-size: 8vh;
+        }
+        p{
+          top: 80px;
+          font-size: 1.5em;
+        }
+      }
+    }
+  }
+}
+@media only screen and (max-width: 640px){
+  .gallery{
+    .photo{
+      .photo-hover{
+        .divider{
+          top: 65px;
+        }
+        a{
+          top: 75px;
+        }
+        .fa{
+          font-size: 7vh;
+        }
+        p{
+          top: 65px;
+          font-size: 1.3em;
+        }
+      }
+    }
+  }
+}
+@media only screen and (max-width: 500px){
+  .gallery{
+    .photo{
+      .photo-hover{
+        .divider{
+          top: 40px;
+        }
+        a{
+          top: 50px;
+        }
+        .fa{
+          font-size: 6vh;
+        }
+        p{
+          top: 40px;
+          font-size: 1.2em;
+        }
+      }
+    }
+  }
+}
+@media only screen and (max-width: 380px){
+  .gallery{
+    .photo{
+      .photo-hover{
+        .divider{
+          top: 30px;
+        }
+        a{
+          top: 40px;
+        }
+        .fa{
+          font-size: 5vh;
+        }
+        p{
+          top: 30px;
+          font-size: 1.2em;
         }
       }
     }
@@ -280,10 +375,18 @@ nav{
         }
         #fix{
           display: inline-table;
-          padding-bottom: 0;
+          padding-bottom: 10px;
           margin-bottom: 0;
+          margin-top: 0;
+          padding-top: 0;
         }
         .project-features{
+          h4{
+            display: inline-block;
+            padding-top: 10px;
+            margin-bottom: 0;
+            padding-bottom: 0;
+          }
           li{
             border: 0;
             font-size: 14px;
@@ -294,6 +397,8 @@ nav{
         }
       }
     }
+
+
     //ABOUT PAGE
     .about{
       padding: 20px;
@@ -360,19 +465,24 @@ nav{
         }
         .testimonials{
           .testimonial{
-              border: 1px solid #e2e2e2;
+              border: 1px solid #d7d7d7;
             .photo{
               background-color: #1ab5b3;
+              z-index: 2;
+
             }
             .img-responsive{
               margin: 0;
             }
             .name{
               background-color: #1ab5b3;
+              height: 80px;
               p{
-                padding: 30px 0;
+                padding: 30px 10px;
                 margin: 0;
                 font-style: italic;
+                color: white;
+                font-size: 13px;
               }
             }
             .description{
@@ -395,6 +505,83 @@ nav{
     }
   }
 }
+@media only screen and (max-width: 1200px){
+  .background{
+    .wrapper{
+      .about{
+        .about-skills{
+          .testimonials{
+            .testimonial{
+              .name{
+                p{
+                  text-align: center;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media only screen and (max-width: 840px){
+  .background{
+    .wrapper{
+      .about{
+        .about-skills{
+          .testimonials{
+            .testimonial{
+              .name{
+                p{
+                  padding-left: 40px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media only screen and (max-width: 768px){
+  .background{
+    .wrapper{
+      .about{
+        .about-skills{
+          .testimonials{
+            .testimonial{
+              .name{
+                p{
+                  text-align: left;
+                  padding-left: 30px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media only screen and (max-width: 440px){
+  .background{
+    .wrapper{
+      .about{
+        .about-skills{
+          .testimonials{
+            .testimonial{
+              .name{
+                p{
+                  text-align: center;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
 @media only screen and (max-width: 768px){
   .background{
     width: 100%;
@@ -407,6 +594,9 @@ nav{
         }
         .project-info{
           padding-left: 0 !important;
+          #fix{
+            padding-top: 15px;
+          }
           .project-features{
             float: left;
           }
